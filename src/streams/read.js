@@ -9,7 +9,7 @@ const srcFile = path.join(__dirname, 'files/fileToRead.txt')
 const read = async () => {
     const rs = fs.createReadStream(srcFile);
     rs.on('data', (stream) => {
-        process.stdout.write('\x1b[33m' + stream + '\x1b[0m', (err) => {
+        process.stdout.write('\x1b[33m' + stream + '\x1b[0m\n', (err) => {
             if(err) throw err;
         })
     });
